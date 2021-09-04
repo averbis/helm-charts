@@ -3,6 +3,24 @@ entries:
   health-discovery:
   - apiVersion: v1
     appVersion: 6.1.0
+    created: "2021-09-04T21:48:27.063678374Z"
+    description: Health Discovery is the healthcare text mining and machine learning
+      platform for analyzing large amounts of patient data
+    digest: 4c86173c3a5430a7ed53dde028091b4677103e8e24695db73214c99b461dcf4b
+    home: https://averbis.com/
+    icon: https://averbis.com/wp-content/uploads/2020/09/averbis_health_discovery.png
+    keywords:
+    - health-discovery
+    maintainers:
+    - email: info@averbis.com
+      name: averbis
+      url: https://averbis.com
+    name: health-discovery
+    urls:
+    - https://github.com/averbis/helm-charts/releases/download/health-discovery-0.4.0/health-discovery-0.4.0.tgz
+    version: 0.4.0
+  - apiVersion: v1
+    appVersion: 6.1.0
     created: "2021-09-04T13:06:14.771122004Z"
     description: Health Discovery is the healthcare text mining and machine learning
       platform for analyzing large amounts of patient data
@@ -74,6 +92,23 @@ entries:
     - https://github.com/averbis/helm-charts/releases/download/health-discovery-0.1.0/health-discovery-0.1.0.tgz
     version: 0.1.0
   information-discovery:
+  - apiVersion: v1
+    appVersion: 6.0.0
+    created: "2021-09-04T21:48:27.20598902Z"
+    description: Information Discovery NLP and ML platform
+    digest: 23b29412a38264c07317f278626c344824591fed27f7111268e55e6c5c3e6cc7
+    home: https://averbis.com/
+    icon: https://averbis.com/wp-content/uploads/2020/09/averbis_information_discovery.png
+    keywords:
+    - information-discovery
+    maintainers:
+    - email: info@averbis.com
+      name: averbis
+      url: https://averbis.com
+    name: information-discovery
+    urls:
+    - https://github.com/averbis/helm-charts/releases/download/information-discovery-0.7.0/information-discovery-0.7.0.tgz
+    version: 0.7.0
   - apiVersion: v1
     appVersion: 6.0.0
     created: "2021-09-04T13:06:14.910972037Z"
@@ -185,4 +220,4 @@ entries:
     urls:
     - https://github.com/cgaege/helm-charts/releases/download/information-discovery-0.0.1/information-discovery-0.0.1.tgz
     version: 0.0.1
-generated: "2021-09-04T13:06:14.911028338Z"
+generated: "2021-09-04T21:48:27.206339949Z"
