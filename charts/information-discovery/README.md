@@ -4,7 +4,7 @@ This chart deploys Information Discovery in your Kubernetes cluster.
 
 ## Prerequisites
 
-- A running Kubernetes cluster ([kind](https://kind.sigs.k8s.io/docs/), [k3s](https://k3s.io/), [minikube](https://minikube.sigs.k8s.io/docs/start/), [rancher](https://rancher.com/) or managed Kubernetes like [AWS EKS](https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html) or [Google GKE](https://cloud.google.com/kubernetes-engine))
+- A running Kubernetes cluster with at least 16 GB Ram on each worker node
 - [Kubectl](https://kubernetes.io/docs/tasks/tools/)
 - [Helm](https://helm.sh/docs/intro/install/)
 
@@ -39,6 +39,9 @@ helm install id .
 ```
 
 ### Exposing the Application
+
+By default the application is not accessable from outside the Kubernetes cluster.
+
 Create a kubernetes `service` of type `loadBalancer` to access the application from outside the kubernetes cluster. Out of the box this only works
 with cloud providers like Google GKE or AWS EKS.
 
