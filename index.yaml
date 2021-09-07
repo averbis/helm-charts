@@ -112,6 +112,23 @@ entries:
   information-discovery:
   - apiVersion: v1
     appVersion: 6.0.0
+    created: "2021-09-07T10:00:50.16087557Z"
+    description: Information Discovery NLP and ML platform
+    digest: 0ace8daadc4cb1ea4b11a215a23c72f1c996a2607cda9b2e9c4d2ceab47f6a0e
+    home: https://averbis.com/
+    icon: https://averbis.com/wp-content/uploads/2020/09/averbis_information_discovery.png
+    keywords:
+    - information-discovery
+    maintainers:
+    - email: info@averbis.com
+      name: averbis
+      url: https://averbis.com
+    name: information-discovery
+    urls:
+    - https://github.com/averbis/helm-charts/releases/download/information-discovery-0.9.0/information-discovery-0.9.0.tgz
+    version: 0.9.0
+  - apiVersion: v1
+    appVersion: 6.0.0
     created: "2021-09-06T14:44:29.350062228Z"
     description: Information Discovery NLP and ML platform
     digest: e1cd27bd64025bff99363ca0f74e40e2ebd2c4b04c592bb445c876776e13d9c0
@@ -255,4 +272,4 @@ entries:
     urls:
     - https://github.com/cgaege/helm-charts/releases/download/information-discovery-0.0.1/information-discovery-0.0.1.tgz
     version: 0.0.1
-generated: "2021-09-06T14:44:29.350289632Z"
+generated: "2021-09-07T10:00:50.160950671Z"
