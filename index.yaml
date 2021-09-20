@@ -310,6 +310,21 @@ entries:
   kafka:
   - apiVersion: v1
     appVersion: 0.0.6
+    created: "2021-09-20T11:50:19.207921621Z"
+    description: Apache Kafka with Averbis Addons
+    digest: 0bc929ae3aa48c594628ecf57d0817256d7af83ff3bca14f7bad2cb2dbd8090d
+    home: https://averbis.com/
+    icon: https://upload.wikimedia.org/wikipedia/commons/0/05/Apache_kafka.svg
+    maintainers:
+    - email: info@averbis.com
+      name: averbis
+      url: https://averbis.com
+    name: kafka
+    urls:
+    - https://github.com/averbis/helm-charts/releases/download/kafka-0.0.3/kafka-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v1
+    appVersion: 0.0.6
     created: "2021-09-17T07:42:26.914402471Z"
     description: Apache Kafka with Averbis Addons
     digest: 40255a5346a8f2d1c561604d67c16fba7047595c6dfdc4e4ca0b0fa70057d3b4
@@ -323,4 +338,4 @@ entries:
     urls:
     - https://github.com/averbis/helm-charts/releases/download/kafka-0.0.2/kafka-0.0.2.tgz
     version: 0.0.2
-generated: "2021-09-17T07:42:26.914706676Z"
+generated: "2021-09-20T11:50:19.207991122Z"
