@@ -338,4 +338,19 @@ entries:
     urls:
     - https://github.com/averbis/helm-charts/releases/download/kafka-0.0.2/kafka-0.0.2.tgz
     version: 0.0.2
-generated: "2021-09-20T11:50:19.207991122Z"
+  tableau-connector:
+  - apiVersion: v1
+    appVersion: 0.4.0
+    created: "2021-09-22T14:46:37.749680083Z"
+    description: Tableau web data connector for Averbis
+    digest: 1405308a7655ca9930782fbfede9b205a1bcafb93e023d33c69d20abe50c29b5
+    home: https://averbis.com/
+    maintainers:
+    - email: info@averbis.com
+      name: averbis
+      url: https://averbis.com
+    name: tableau-connector
+    urls:
+    - https://github.com/averbis/helm-charts/releases/download/tableau-connector-0.0.1/tableau-connector-0.0.1.tgz
+    version: 0.0.1
+generated: "2021-09-22T14:46:37.749777088Z"
