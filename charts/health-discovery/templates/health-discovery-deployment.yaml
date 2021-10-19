@@ -62,7 +62,7 @@ spec:
                 - -f
                 - http://localhost:8080/health-discovery
             failureThreshold: 3
-            initialDelaySeconds: 60
+            initialDelaySeconds: 120
             periodSeconds: 30
             timeoutSeconds: 5
           name: health-discovery
