@@ -3,6 +3,24 @@ entries:
   health-discovery:
   - apiVersion: v1
     appVersion: 6.2.1
+    created: "2021-10-29T15:37:43.560317539Z"
+    description: Health Discovery is the healthcare text mining and machine learning
+      platform for analyzing large amounts of patient data
+    digest: ee204ec74811132b4442b877856c28cb233531c640cbe376c838264fa7bd49e4
+    home: https://averbis.com/
+    icon: https://averbis.com/wp-content/uploads/2020/09/averbis_health_discovery.png
+    keywords:
+    - health-discovery
+    maintainers:
+    - email: info@averbis.com
+      name: averbis
+      url: https://averbis.com
+    name: health-discovery
+    urls:
+    - https://github.com/averbis/helm-charts/releases/download/health-discovery-0.9.0/health-discovery-0.9.0.tgz
+    version: 0.9.0
+  - apiVersion: v1
+    appVersion: 6.2.1
     created: "2021-10-13T06:42:23.482956692Z"
     description: Health Discovery is the healthcare text mining and machine learning
       platform for analyzing large amounts of patient data
@@ -200,6 +218,23 @@ entries:
     - https://github.com/averbis/helm-charts/releases/download/health-discovery-0.1.0/health-discovery-0.1.0.tgz
     version: 0.1.0
   information-discovery:
+  - apiVersion: v1
+    appVersion: 6.0.0
+    created: "2021-10-29T15:37:43.746892133Z"
+    description: Information Discovery NLP and ML platform
+    digest: 2a97e69fc8ac185f1db276ad0edd69729fa37a6f3857ca45ffe942343f81b946
+    home: https://averbis.com/
+    icon: https://averbis.com/wp-content/uploads/2020/09/averbis_information_discovery.png
+    keywords:
+    - information-discovery
+    maintainers:
+    - email: info@averbis.com
+      name: averbis
+      url: https://averbis.com
+    name: information-discovery
+    urls:
+    - https://github.com/averbis/helm-charts/releases/download/information-discovery-0.11.0/information-discovery-0.11.0.tgz
+    version: 0.11.0
   - apiVersion: v1
     appVersion: 6.0.0
     created: "2021-10-11T09:32:11.067599623Z"
@@ -504,4 +539,4 @@ entries:
     urls:
     - https://github.com/averbis/helm-charts/releases/download/tableau-connector-0.0.1/tableau-connector-0.0.1.tgz
     version: 0.0.1
-generated: "2021-10-13T06:42:23.483087491Z"
+generated: "2021-10-29T15:37:43.747156335Z"
