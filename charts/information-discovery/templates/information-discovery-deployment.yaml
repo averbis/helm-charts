@@ -49,12 +49,16 @@ spec:
                   {{ end }}
                   key: databasePassword
             - name: DATABASE_URL
+              {{ if .Values.externalDbConnectionUrl }}
+              value: {{ .Values.externalDbConnectionUrl }}
+              {{- else }}
               value: jdbc:mariadb://database:3306/aif?useMysqlMetadata=true
+              {{ end }}
             - name: PLATFORM_MAX_MEM
               value: {{ .Values.maxMemory }}
             - name: PLATFORM_PORT
               value: "8080"
-          image: registry.averbis.com/information-discovery/information-discovery:6.0.0
+          image: registry.averbis.com/information-discovery/information-discovery:6.1.0
           livenessProbe:
             exec:
               command:

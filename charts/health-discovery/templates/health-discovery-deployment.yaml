@@ -49,7 +49,11 @@ spec:
                   {{ end }}
                   key: databasePassword
             - name: DATABASE_URL
+              {{ if .Values.externalDbConnectionUrl }}
+              value: {{ .Values.externalDbConnectionUrl }}
+              {{- else }}
               value: jdbc:mariadb://database:3306/aif?useMysqlMetadata=true
+              {{ end }}
             - name: PLATFORM_MAX_MEM
               value: {{ .Values.maxMemory }}
             - name: PLATFORM_PORT
