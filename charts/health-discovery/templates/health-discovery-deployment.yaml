@@ -75,5 +75,12 @@ spec:
           resources: 
             requests:
               memory: {{ .Values.maxMemory }}
+          volumeMounts:
+            - mountPath: /opt/resources/platform
+              name: resourcevol
       restartPolicy: Always
+      volumes:
+        - name: resourcevol
+          persistentVolumeClaim:
+            claimName: resourcevol
 status: {}
