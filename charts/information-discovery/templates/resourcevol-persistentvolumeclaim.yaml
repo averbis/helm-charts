@@ -7,7 +7,8 @@ metadata:
   name: resourcevol
 spec:
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
+  storageClassName: efs-sc
   resources:
     requests:
       storage: 10Gi
