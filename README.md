@@ -19,4 +19,4 @@ helm search repo averbis
 ```
 
 ## Install Applications
-For application installation instructions please refer to the application specific documentation located in the [charts](charts) directory.
+For application installation instructions please refer to the application specific documentation located in the [charts directory](charts).

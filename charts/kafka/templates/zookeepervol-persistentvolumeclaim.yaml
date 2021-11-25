@@ -1,16 +1,14 @@
-{{ if not .Values.externalDbConnectionUrl }}
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   creationTimestamp: null
   labels:
-    io.kompose.service: dbvol
-  name: dbvol
+    io.kompose.service: zookeepervol
+  name: zookeepervol
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 100Gi
+      storage: 1Gi
 status: {}
-{{ end }}

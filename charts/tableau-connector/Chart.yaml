@@ -1,0 +1,10 @@
+name: tableau-connector
+description: Tableau web data connector for Averbis
+version: 0.0.1
+apiVersion: v1
+appVersion: "0.4.0"
+home: https://averbis.com/
+maintainers:
+  - name: averbis
+    email: info@averbis.com
+    url: https://averbis.com

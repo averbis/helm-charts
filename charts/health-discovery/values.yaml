@@ -1,2 +1,5 @@
 # The maximum amount of memory for the health discovery container
 maxMemory: "24G"
+
+# Use existing secret for MariaDB authentication parameters
+existingDbSecret: ""

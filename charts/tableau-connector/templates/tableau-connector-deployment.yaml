@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -c
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: tableau-connector
+  name: tableau-connector
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: tableau-connector
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -c
+        kompose.version: 1.22.0 (955b78124)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: tableau-connector
+    spec:
+      imagePullSecrets:
+      - name: averbis-docker-registry
+      containers:
+        - env:
+          image: registry.averbis.com/tableau-connector/tableau-connector:0.4.0
+          livenessProbe:
+            exec:
+              command:
+                - curl
+                - -f
+                - http://localhost
+            failureThreshold: 20
+            periodSeconds: 5
+            timeoutSeconds: 10
+          name: tableau-connector
+          ports:
+            - containerPort: 80
+          resources: {}
+      restartPolicy: Always
+status: {}

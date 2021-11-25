@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -c
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: connect
+  name: connect
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: connect
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -c
+        kompose.version: 1.22.0 (955b78124)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: connect
+    spec:
+      imagePullSecrets:
+      - name: averbis-docker-registry
+      containers:
+        - env:
+            - name: CONNECT_BOOTSTRAP_SERVERS
+              value: broker:29092
+            - name: CONNECT_REST_ADVERTISED_HOST_NAME
+              value: connect
+            - name: CONNECT_REST_ADVERTISED_PORT
+              value: "8085"
+            - name: CONNECT_REST_HOST_NAME
+              value: connect
+            - name: CONNECT_REST_PORT
+              value: "8085"
+            - name: CONNECT_VALUE_CONVERTER_SCHEMA_REGISTRY_URL
+              value: http://schema-registry:8081
+          image: registry.averbis.com/kafka/averbis-kafka-connect:0.0.6
+          livenessProbe:
+            exec:
+              command:
+                - curl
+                - -f
+                - http://connect:8085/connectors
+            failureThreshold: 20
+            periodSeconds: 5
+            timeoutSeconds: 10
+          name: connect
+          ports:
+            - containerPort: 8085
+          resources: {}
+      hostname: connect
+      restartPolicy: Always
+status: {}

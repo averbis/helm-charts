@@ -1,3 +1,4 @@
+{{ if not .Values.externalDbConnectionUrl }}
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -12,3 +13,4 @@ spec:
     requests:
       storage: 100Gi
 status: {}
+{{ end }}

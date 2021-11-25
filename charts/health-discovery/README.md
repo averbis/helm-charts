@@ -30,13 +30,33 @@ helm repo add averbis https://averbis.github.io/helm-charts/
 The chart can be installed using the helm repository or by checking out the chart sources.
 
 ### Installing using Helm Repository
+To install the chart with the release name `hd`:
 ```
 helm install hd averbis/health-discovery
 ```
 ### Installing using Chart Sources
+To install the chart with the release name `hd` using cloned chart sources:
 ```
 helm install hd .
 ```
+
+### Chart Parameters
+The chart can optionally be configured using the following parameters:
+
+| Name        | Description         | Default Value     |
+| :----------:|:-------------------:| :----------------:|
+| `maxMemory` | Maximum memory      | 24G               |
+| `existingDbSecret`  | Use MariaDB credentials from an existing secret. The secret has to contain the keys `databaseRootPassword`, `databasePassword` and `databaseUsername` | "" |
+| `externalDbConnectionUrl` | JDBC connection URL of an external MariaDB 10.x database. Requires the `existingDbSecret` parameter to be set | "" |
+
+
+Specify each parameter using the `--set name=value` argument to `helm install` and `helm upgrade`  to overwrite the chart default values, for example:
+
+```
+helm install hd averbis/health-discovery --set maxMemory=24G,existingDbSecret=my-secret,externalDbConnectionUrl=jdbc:mariadb://my-mariadb-host:3306/mydb?useMysqlMetadata=true
+```
+
+NOTE: Once this chart is deployed, it is not possible to change the MariaDB access credentials, such as usernames or passwords, using Helm.
 
 ### Exposing the Application
 Create a kubernetes `service` of type `loadBalancer` to access the application from outside the kubernetes cluster. Out of the box this only works
@@ -63,12 +83,15 @@ You can access the application using the `EXTERNAL-IP` of the `hd-load-balancer`
 
 
 ## Upgrading the Chart
+Upgrade the `hd` release to the latest chart version. Data and configuration settings will be migrated.
 ```
 helm repo update
 helm upgrade hd averbis/health-discovery
 ```
 
 ## Uninstalling the Chart
+Uninstall the `hd` release. This will delete all Kubernetes components associated with this chart. All data and configuration settings will be deleted as well.
+
 ```
 helm uninstall hd
 ```

@@ -30,17 +30,35 @@ spec:
         - env:
             - name: DATABASE_DRIVER_CLASS
               value: org.mariadb.jdbc.Driver
-            - name: DATABASE_PASSWORD
-              value: getaccess
-            - name: DATABASE_URL
-              value: jdbc:mariadb://database:3306/aif?useMysqlMetadata=true
             - name: DATABASE_USERNAME
-              value: aif
+              valueFrom:
+                secretKeyRef:
+                  {{ if .Values.existingDbSecret }}
+                  name: {{ .Values.existingDbSecret }}
+                  {{- else }}
+                  name: database-secret
+                  {{ end }}
+                  key: databaseUsername
+            - name: DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  {{ if .Values.existingDbSecret }}
+                  name: {{ .Values.existingDbSecret }}
+                  {{- else }}
+                  name: database-secret
+                  {{ end }}
+                  key: databasePassword
+            - name: DATABASE_URL
+              {{ if .Values.externalDbConnectionUrl }}
+              value: {{ .Values.externalDbConnectionUrl }}
+              {{- else }}
+              value: jdbc:mariadb://database:3306/aif?useMysqlMetadata=true
+              {{ end }}
             - name: PLATFORM_MAX_MEM
               value: {{ .Values.maxMemory }}
             - name: PLATFORM_PORT
               value: "8080"
-          image: registry.averbis.com/health-discovery/health-discovery:6.1.0
+          image: registry.averbis.com/health-discovery/health-discovery:6.3.0
           livenessProbe:
             exec:
               command:

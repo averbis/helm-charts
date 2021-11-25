@@ -1,2 +1,10 @@
 # The maximum amount of memory for the information discovery container
 maxMemory: "16G"
+
+# Use existing secret for MariaDB authentication parameters
+existingDbSecret: ""
+
+# Use existing external MariaDB database, requires existingDBSecret to be set
+# Example:
+# jdbc:mariadb://my-database-host:3306/my-database?useMysqlMetadata=true
+externalDbConnectionUrl: ""

@@ -1,0 +1,12 @@
+** Please be patient while the chart is being deployed **
+
+Watch the deployment status using the command: 
+  
+  kubectl get pods -w
+
+
+{{ if not .Values.existingDbSecret }}
+To obtain the MariaDB root user password:
+
+    kubectl get secret database-secret -o jsonpath="{.data.databaseRootPassword}" | base64 --decode
+{{ end }}

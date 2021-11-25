@@ -1,3 +1,4 @@
+{{ if not .Values.externalDbConnectionUrl }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -28,12 +29,33 @@ spec:
         - env:
             - name: MYSQL_DATABASE
               value: aif
-            - name: MYSQL_PASSWORD
-              value: getaccess
-            - name: MYSQL_ROOT_PASSWORD
-              value: getaccess
             - name: MYSQL_USER
-              value: aif
+              valueFrom:
+                secretKeyRef:
+                  {{ if .Values.existingDbSecret }}
+                  name: {{ .Values.existingDbSecret }}
+                  {{- else }}
+                  name: database-secret
+                  {{ end }}
+                  key: databaseUsername
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  {{ if .Values.existingDbSecret }}
+                  name: {{ .Values.existingDbSecret }}
+                  {{- else }}
+                  name: database-secret
+                  {{ end }}
+                  key: databasePassword
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  {{ if .Values.existingDbSecret }}
+                  name: {{ .Values.existingDbSecret }}
+                  {{- else }}
+                  name: database-secret
+                  {{ end }}
+                  key: databaseRootPassword
             - name: innodb_buffer_pool_size
               value: 512m
             - name: innodb_log_buffer_size
@@ -54,3 +76,4 @@ spec:
           persistentVolumeClaim:
             claimName: dbvol
 status: {}
+{{ end }}
