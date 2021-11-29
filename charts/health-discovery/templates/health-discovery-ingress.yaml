@@ -1,16 +1,19 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-health-discovery
   annotations:
     kubernetes.io/ingress.class: alb
-    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/scheme: internal
     alb.ingress.kubernetes.io/target-type: ip
 spec:
   rules:
     - http:
         paths:
           - path: /*
+            pathType: Prefix
             backend:
-              serviceName: health-discovery
-              servicePort: 8080
+              service:
+                name: health-discovery
+                port:
+                  number: 8080
