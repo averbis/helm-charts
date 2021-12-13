@@ -237,6 +237,23 @@ entries:
     version: 0.1.0
   information-discovery:
   - apiVersion: v1
+    appVersion: 6.2.0
+    created: "2021-12-13T12:17:51.455547138Z"
+    description: Information Discovery NLP and ML platform
+    digest: 1b8821901c0197c4e2446850bd90aeae205cebf7dfcf0ff9f8b7db1c8405feaa
+    home: https://averbis.com/
+    icon: https://averbis.com/wp-content/uploads/2020/09/averbis_information_discovery.png
+    keywords:
+    - information-discovery
+    maintainers:
+    - email: info@averbis.com
+      name: averbis
+      url: https://averbis.com
+    name: information-discovery
+    urls:
+    - https://github.com/averbis/helm-charts/releases/download/information-discovery-0.13.0/information-discovery-0.13.0.tgz
+    version: 0.13.0
+  - apiVersion: v1
     appVersion: 6.1.0
     created: "2021-11-03T15:44:57.769792939Z"
     description: Information Discovery NLP and ML platform
@@ -574,4 +591,4 @@ entries:
     urls:
     - https://github.com/averbis/helm-charts/releases/download/tableau-connector-0.0.1/tableau-connector-0.0.1.tgz
     version: 0.0.1
-generated: "2021-11-24T16:17:05.431094265Z"
+generated: "2021-12-13T12:17:51.455755245Z"
