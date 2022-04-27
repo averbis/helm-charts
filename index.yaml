@@ -2,6 +2,24 @@ apiVersion: v1
 entries:
   health-discovery:
   - apiVersion: v1
+    appVersion: 6.9.0
+    created: "2022-04-27T09:40:49.85729655Z"
+    description: Health Discovery is the healthcare text mining and machine learning
+      platform for analyzing large amounts of patient data
+    digest: 9241e45effa1bb237e352c95ed04e4b39072e5ea222e1a16eb371a84ed4d88a3
+    home: https://averbis.com/
+    icon: https://averbis.com/wp-content/uploads/2020/09/averbis_health_discovery.png
+    keywords:
+    - health-discovery
+    maintainers:
+    - email: info@averbis.com
+      name: averbis
+      url: https://averbis.com
+    name: health-discovery
+    urls:
+    - https://github.com/averbis/helm-charts/releases/download/health-discovery-0.19.0/health-discovery-0.19.0.tgz
+    version: 0.19.0
+  - apiVersion: v1
     appVersion: 6.8.0
     created: "2022-04-27T09:39:00.576557451Z"
     description: Health Discovery is the healthcare text mining and machine learning
@@ -789,4 +807,4 @@ entries:
     urls:
     - https://github.com/averbis/helm-charts/releases/download/tableau-connector-0.0.1/tableau-connector-0.0.1.tgz
     version: 0.0.1
-generated: "2022-04-27T09:39:00.577047905Z"
+generated: "2022-04-27T09:40:49.857669944Z"
