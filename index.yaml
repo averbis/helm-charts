@@ -828,6 +828,23 @@ entries:
     urls:
     - https://github.com/averbis/helm-charts/releases/download/kafka-0.0.2/kafka-0.0.2.tgz
     version: 0.0.2
+  patent-monitor:
+  - apiVersion: v1
+    appVersion: 6.5.1
+    created: "2022-07-07T10:49:27.275026411Z"
+    description: Patent Searching and Monitoring based on Artificial Intelligence
+    digest: 7c7fd38a13e746a2bdf116bb8bcc86019003bc2e56763f6e185897edcc16fcdb
+    home: https://averbis.com/
+    keywords:
+    - patent-monitor
+    maintainers:
+    - email: info@averbis.com
+      name: averbis
+      url: https://averbis.com
+    name: patent-monitor
+    urls:
+    - https://github.com/averbis/helm-charts/releases/download/patent-monitor-0.1.0/patent-monitor-0.1.0.tgz
+    version: 0.1.0
   tableau-connector:
   - apiVersion: v1
     appVersion: 0.4.0
@@ -843,4 +860,4 @@ entries:
     urls:
     - https://github.com/averbis/helm-charts/releases/download/tableau-connector-0.0.1/tableau-connector-0.0.1.tgz
     version: 0.0.1
-generated: "2022-06-28T12:04:58.203904074Z"
+generated: "2022-07-07T10:49:27.275519641Z"
