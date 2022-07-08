@@ -3,6 +3,24 @@ entries:
   health-discovery:
   - apiVersion: v1
     appVersion: 6.11.1
+    created: "2022-07-08T12:45:36.975552065Z"
+    description: Health Discovery is the healthcare text mining and machine learning
+      platform for analyzing large amounts of patient data
+    digest: 293f6510ae323dd9fc88f987568525b57279374b9cf6777ee1102f9604f9fb15
+    home: https://averbis.com/
+    icon: https://averbis.com/wp-content/uploads/2020/09/averbis_health_discovery.png
+    keywords:
+    - health-discovery
+    maintainers:
+    - email: info@averbis.com
+      name: averbis
+      url: https://averbis.com
+    name: health-discovery
+    urls:
+    - https://github.com/averbis/helm-charts/releases/download/health-discovery-0.22.0/health-discovery-0.22.0.tgz
+    version: 0.22.0
+  - apiVersion: v1
+    appVersion: 6.11.1
     created: "2022-06-28T12:04:58.203106375Z"
     description: Health Discovery is the healthcare text mining and machine learning
       platform for analyzing large amounts of patient data
@@ -490,6 +508,23 @@ entries:
   information-discovery:
   - apiVersion: v1
     appVersion: 6.2.0
+    created: "2022-07-08T12:45:37.229493216Z"
+    description: Information Discovery NLP and ML platform
+    digest: 8a3717945ad93df4056731bd5c686229458c6a1f90a67509466e9446cc145392
+    home: https://averbis.com/
+    icon: https://averbis.com/wp-content/uploads/2020/09/averbis_information_discovery.png
+    keywords:
+    - information-discovery
+    maintainers:
+    - email: info@averbis.com
+      name: averbis
+      url: https://averbis.com
+    name: information-discovery
+    urls:
+    - https://github.com/averbis/helm-charts/releases/download/information-discovery-0.14.0/information-discovery-0.14.0.tgz
+    version: 0.14.0
+  - apiVersion: v1
+    appVersion: 6.2.0
     created: "2021-12-13T12:17:51.455547138Z"
     description: Information Discovery NLP and ML platform
     digest: 1b8821901c0197c4e2446850bd90aeae205cebf7dfcf0ff9f8b7db1c8405feaa
@@ -831,6 +866,22 @@ entries:
   patent-monitor:
   - apiVersion: v1
     appVersion: 6.5.1
+    created: "2022-07-08T12:45:37.479164915Z"
+    description: Patent Searching and Monitoring based on Artificial Intelligence
+    digest: c5ca6888d96db1519b9dbb23f1049a630d56a650a93bc116120539af190f172d
+    home: https://averbis.com/
+    keywords:
+    - patent-monitor
+    maintainers:
+    - email: info@averbis.com
+      name: averbis
+      url: https://averbis.com
+    name: patent-monitor
+    urls:
+    - https://github.com/averbis/helm-charts/releases/download/patent-monitor-0.2.0/patent-monitor-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v1
+    appVersion: 6.5.1
     created: "2022-07-07T10:49:27.275026411Z"
     description: Patent Searching and Monitoring based on Artificial Intelligence
     digest: 7c7fd38a13e746a2bdf116bb8bcc86019003bc2e56763f6e185897edcc16fcdb
@@ -860,4 +911,4 @@ entries:
     urls:
     - https://github.com/averbis/helm-charts/releases/download/tableau-connector-0.0.1/tableau-connector-0.0.1.tgz
     version: 0.0.1
-generated: "2022-07-07T10:49:27.275519641Z"
+generated: "2022-07-08T12:45:37.479614731Z"
