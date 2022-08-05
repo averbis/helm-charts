@@ -54,6 +54,15 @@ spec:
           volumeMounts:
             - mountPath: /opt/solr/server/solr/solrCores
               name: solrvol
+          securityContext:
+            allowPrivilegeEscalation: false
+            privileged: false
+      securityContext:
+        runAsUser: 8983
+        runAsGroup: 8983
+        fsGroup: 8983
+        fsGroupChangePolicy: "Always"
+        runAsNonRoot: true
       restartPolicy: Always
       volumes:
         - name: solrvol
