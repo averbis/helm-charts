@@ -34,7 +34,7 @@ spec:
               value: "8983"
             - name: TEXTANALYSIS_URL
               value: http://health-discovery:8080/health-discovery/rest
-          image: registry.averbis.com/solr/solr:6.26.0
+          image: registry.averbis.com/solr/solr:7.2.0
           livenessProbe:
             exec:
               command:
