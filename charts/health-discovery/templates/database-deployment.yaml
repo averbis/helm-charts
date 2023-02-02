@@ -70,6 +70,9 @@ spec:
           volumeMounts:
             - mountPath: /var/lib/mysql
               name: dbvol
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 999
       restartPolicy: Always
       volumes:
         - name: dbvol
