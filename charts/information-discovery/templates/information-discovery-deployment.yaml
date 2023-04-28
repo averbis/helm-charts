@@ -58,7 +58,7 @@ spec:
               value: {{ .Values.maxMemory }}
             - name: PLATFORM_PORT
               value: "8080"
-          image: registry.averbis.com/information-discovery/information-discovery:6.2.0
+          image: registry.averbis.com/information-discovery/information-discovery:6.8.0
           livenessProbe:
             exec:
               command:

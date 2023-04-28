@@ -26,7 +26,7 @@ spec:
       imagePullSecrets:
       - name: averbis-docker-registry
       containers:
-        - image: registry.averbis.com/kafka/averbis-kafka-broker:0.0.6
+        - image: registry.averbis.com/kafka/averbis-kafka-broker:2.1.1
           name: broker
           ports:
             - containerPort: 9092

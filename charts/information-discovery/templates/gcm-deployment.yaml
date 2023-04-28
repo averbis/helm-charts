@@ -40,7 +40,7 @@ spec:
               value: "8080"
             - name: PLATFORM_URL_NAME
               value: information-discovery
-          image: registry.averbis.com/gcm/gcm:6.10.0
+          image: registry.averbis.com/gcm/gcm:7.5.0
           livenessProbe:
             exec:
               command:
