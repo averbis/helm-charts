@@ -9,7 +9,7 @@ metadata:
     io.kompose.service: information-discovery
   name: information-discovery
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       io.kompose.service: information-discovery
@@ -58,7 +58,11 @@ spec:
               value: {{ .Values.maxMemory }}
             - name: PLATFORM_PORT
               value: "8080"
-          image: registry.averbis.com/information-discovery/information-discovery:6.8.0
+            - name: SOLR_HOSTNAME
+              value: "solr"
+            - name: SOLR_PORT
+              value: "8983"
+          image: registry.averbis.com/information-discovery/information-discovery:6.9.0
           livenessProbe:
             exec:
               command:
