@@ -24,6 +24,9 @@ spec:
       labels:
         io.kompose.service: solr
     spec:
+      securityContext:
+        runAsUser: 1000
+        fsGroup: 1000
       imagePullSecrets:
       - name: averbis-docker-registry
       containers:

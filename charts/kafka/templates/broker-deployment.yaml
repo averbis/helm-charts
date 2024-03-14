@@ -23,6 +23,9 @@ spec:
       labels:
         io.kompose.service: broker
     spec:
+      securityContext:
+        runAsUser: 1000
+        fsGroup: 1000
       imagePullSecrets:
       - name: averbis-docker-registry
       containers:

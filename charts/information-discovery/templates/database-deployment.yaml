@@ -25,6 +25,9 @@ spec:
       labels:
         io.kompose.service: database
     spec:
+      securityContext:
+        runAsUser: 999
+        fsGroup: 999
       imagePullSecrets:
       - name: averbis-docker-registry
       containers:
