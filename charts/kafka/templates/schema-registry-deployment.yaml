@@ -26,7 +26,7 @@ spec:
       imagePullSecrets:
         - name: averbis-docker-registry
       containers:
-        - image: registry.averbis.com/kafka/averbis-kafka-schema-registry:2.1.1
+        - image: registry.averbis.com/kafka/averbis-kafka-schema-registry:4.1.0
           name: schema-registry
           ports:
             - containerPort: 8081

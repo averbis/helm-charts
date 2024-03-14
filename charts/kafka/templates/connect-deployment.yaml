@@ -39,7 +39,11 @@ spec:
               value: "8085"
             - name: CONNECT_VALUE_CONVERTER_SCHEMA_REGISTRY_URL
               value: http://schema-registry:8081
-          image: registry.averbis.com/information-discovery/averbis-kafka-connect:6.9.1
+            - name: KAFKA_HEAP_OPTS
+              value: "-Xms256M -Xmx3500M"
+            - name: CONNECT_LISTENERS
+              value: http://connect:8085
+          image: registry.averbis.com/information-discovery/averbis-kafka-connect:7.1.1
           livenessProbe:
             exec:
               command:

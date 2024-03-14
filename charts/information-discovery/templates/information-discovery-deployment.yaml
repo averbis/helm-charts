@@ -9,7 +9,7 @@ metadata:
     io.kompose.service: information-discovery
   name: information-discovery
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       io.kompose.service: information-discovery
@@ -62,23 +62,30 @@ spec:
               value: "solr"
             - name: SOLR_PORT
               value: "8983"
-          image: registry.averbis.com/information-discovery/information-discovery:6.9.1
+          image: registry.averbis.com/information-discovery/information-discovery:7.1.1
           livenessProbe:
             exec:
               command:
                 - curl
                 - -f
                 - http://localhost:8080/information-discovery
-            failureThreshold: 3
-            initialDelaySeconds: 60
-            periodSeconds: 30
-            timeoutSeconds: 5
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          startupProbe:
+            exec:
+              command:
+              - curl
+              - -f
+              - http://localhost:8080/information-discovery
+            failureThreshold: 30
+            periodSeconds: 10
           name: information-discovery
           ports:
             - containerPort: 8080
           resources: 
             requests:
               memory: {{ .Values.maxMemory }}
+              cpu: 1000m
           volumeMounts:
             - mountPath: /opt/resources/platform
               name: resourcevol

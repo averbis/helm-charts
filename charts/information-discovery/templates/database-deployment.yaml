@@ -25,6 +25,8 @@ spec:
       labels:
         io.kompose.service: database
     spec:
+      imagePullSecrets:
+      - name: averbis-docker-registry
       containers:
         - env:
             - name: MYSQL_DATABASE
@@ -62,7 +64,7 @@ spec:
               value: 256m
             - name: innodb_log_file_size
               value: 256m
-          image: mariadb:10.5
+          image: registry.averbis.com/mariadb/mariadb:9.4.0
           name: database
           ports:
             - containerPort: 3306

@@ -26,7 +26,7 @@ spec:
       imagePullSecrets:
       - name: averbis-docker-registry
       containers:
-        - image: registry.averbis.com/kafka/averbis-kafka-zookeeper:2.1.1
+        - image: registry.averbis.com/kafka/averbis-kafka-zookeeper:4.1.0
           name: zookeeper
           ports:
             - containerPort: 3000

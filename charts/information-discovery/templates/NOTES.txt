@@ -2,11 +2,29 @@
 
 Watch the deployment status using the command: 
   
-  kubectl get pods -w
-
+kubectl get pods -w
 
 {{ if not .Values.existingDbSecret }}
 To obtain the MariaDB root user password:
 
-    kubectl get secret database-secret -o jsonpath="{.data.databaseRootPassword}" | base64 --decode
+kubectl get secret database-secret -o jsonpath="{.data.databaseRootPassword}" | base64 --decode
+{{ end }}
+
+{{if .Release.IsUpgrade}}
+To upgrade this helm chart from older versions with hard wired MariaDB access credentials please execute the following commands:
+
+cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: Secret
+metadata:
+  name: my-secret
+type: Opaque
+data:
+  databasePassword: $(echo -n "getaccess" | base64 -w0)
+  databaseRootPassword: $(echo -n "getaccess" | base64 -w0)
+  databaseUsername: $(echo -n "aif" | base64 -w0)
+EOF
+
+helm upgrade {{ .Release.Name }} averbis/information-discovery --set existingDbSecret=my-secret
+
 {{ end }}
