@@ -25,6 +25,10 @@ spec:
       labels:
         io.kompose.service: database
     spec:
+      securityContext:
+        enabled: true
+        runAsUser: 999
+        fsGroup: 999
       containers:
         - env:
             - name: MYSQL_DATABASE
