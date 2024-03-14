@@ -25,7 +25,6 @@ spec:
         io.kompose.service: health-discovery
     spec:
       securityContext:
-            enabled: true
             runAsUser: 1000
             fsGroup: 1000
       imagePullSecrets:

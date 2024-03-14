@@ -25,7 +25,6 @@ spec:
         io.kompose.service: solr
     spec:
       securityContext:
-          enabled: true
           runAsUser: 1000
           fsGroup: 1000
       imagePullSecrets:
