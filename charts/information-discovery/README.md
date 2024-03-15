@@ -4,20 +4,27 @@ This chart deploys Information Discovery in your Kubernetes cluster.
 
 ## Prerequisites
 
+- An Averbis account
 - A Kubernetes cluster
 - Persistent volume provisioner support in the underlying Kubernetes infrastructure
 - [Kubectl](https://kubernetes.io/docs/tasks/tools/)
 - [Helm](https://helm.sh/docs/intro/install/)
 
-## Creating Secret to pull Images
+## Creating secret to pull Images
 
-Create a secret named `averbis-docker-registry` with your Averbis credentials to pull images from the [Averbis docker registry](https://registry.averbis.com):
+1. Open [https://registry.averbis.com](https://registry.averbis.com) and **Login via OICD Provider** using your Averbis account credentials. 
 
-```
+2. Click your username at the top right corner of the screen and select **User Profile**.
+
+3. Click the clipboard icon to copy the temporary `CLI secret` associated with your account.
+
+4. Create a kubernetes secret named `averbis-docker-registry` with your username and `CLI secret` as password to pull images the Averbis docker registry.
+
+```bash
 kubectl create secret docker-registry averbis-docker-registry \
 --docker-server=https://registry.averbis.com \
 --docker-username=me@example.com \
---docker-password='MySecretPassword'
+--docker-password='My CLI secret'
 ```
 
 ## Adding the Helm Repository

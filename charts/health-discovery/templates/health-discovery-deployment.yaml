@@ -24,6 +24,9 @@ spec:
       labels:
         io.kompose.service: health-discovery
     spec:
+      securityContext:
+            runAsUser: 1000
+            fsGroup: 1000
       imagePullSecrets:
       - name: averbis-docker-registry
       containers:
@@ -58,7 +61,11 @@ spec:
               value: {{ .Values.maxMemory }}
             - name: PLATFORM_PORT
               value: "8080"
-          image: registry.averbis.com/health-discovery/health-discovery:6.16.0
+            - name: SOLR_HOSTNAME
+              value: "solr"
+            - name: SOLR_PORT
+              value: "8983"
+          image: registry.averbis.com/health-discovery/health-discovery:7.0.0
           livenessProbe:
             exec:
               command:
