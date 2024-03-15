@@ -24,6 +24,9 @@ spec:
       labels:
         io.kompose.service: solr
     spec:
+      securityContext:
+        runAsUser: 1000
+        fsGroup: 1000
       imagePullSecrets:
       - name: averbis-docker-registry
       containers:
@@ -34,7 +37,7 @@ spec:
               value: "8983"
             - name: TEXTANALYSIS_URL
               value: http://information-discovery:8080/information-discovery/rest
-          image: registry.averbis.com/solr/solr:6.10.0
+          image: registry.averbis.com/solr/solr:9.4.0
           livenessProbe:
             exec:
               command:

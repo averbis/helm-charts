@@ -6,14 +6,14 @@ metadata:
     kompose.version: 1.22.0 (955b78124)
   creationTimestamp: null
   labels:
-    io.kompose.service: gcm
-  name: gcm
+    io.kompose.service: pico-ner
+  name: pico-ner
 spec:
   ports:
-    - name: "8181"
-      port: 8181
-      targetPort: 8181
+    - name: "5000"
+      port: 5000
+      targetPort: 5000
   selector:
-    io.kompose.service: gcm
+    io.kompose.service: pico-ner
 status:
   loadBalancer: {}

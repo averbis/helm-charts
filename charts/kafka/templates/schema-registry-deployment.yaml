@@ -23,10 +23,13 @@ spec:
       labels:
         io.kompose.service: schema-registry
     spec:
+      securityContext:
+        runAsUser: 1000
+        fsGroup: 1000
       imagePullSecrets:
         - name: averbis-docker-registry
       containers:
-        - image: registry.averbis.com/kafka/averbis-kafka-schema-registry:0.0.6
+        - image: registry.averbis.com/kafka/averbis-kafka-schema-registry:4.1.0
           name: schema-registry
           ports:
             - containerPort: 8081
