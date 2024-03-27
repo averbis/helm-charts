@@ -23,10 +23,13 @@ spec:
       labels:
         io.kompose.service: broker
     spec:
+      securityContext:
+        runAsUser: 1000
+        fsGroup: 1000
       imagePullSecrets:
       - name: averbis-docker-registry
       containers:
-        - image: registry.averbis.com/kafka/averbis-kafka-broker:0.0.6
+        - image: registry.averbis.com/kafka/averbis-kafka-broker:4.1.0
           name: broker
           ports:
             - containerPort: 9092

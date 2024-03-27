@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -c -f docker-compose.yml -o information-discovery
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: biomedical-ner
+  name: biomedical-ner
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      io.kompose.service: biomedical-ner
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -c -f docker-compose.yml -o information-discovery
+        kompose.version: 1.22.0 (955b78124)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: biomedical-ner
+    spec:
+      imagePullSecrets:
+      - name: averbis-docker-registry
+      containers:
+        - env:
+          image: registry.averbis.com/life-sciences/python-addins/hunflair-ml-service:1.0.0
+          name: biomedical-ner
+          resources: 
+            limits:
+              nvidia.com/gpu: 1 
+      restartPolicy: Always
+status: {}

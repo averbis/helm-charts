@@ -24,6 +24,9 @@ spec:
       labels:
         io.kompose.service: information-discovery
     spec:
+      securityContext:
+        runAsUser: 1000
+        fsGroup: 1000
       imagePullSecrets:
       - name: averbis-docker-registry
       containers:
@@ -58,23 +61,34 @@ spec:
               value: {{ .Values.maxMemory }}
             - name: PLATFORM_PORT
               value: "8080"
-          image: registry.averbis.com/information-discovery/information-discovery:6.2.0
+            - name: SOLR_HOSTNAME
+              value: "solr"
+            - name: SOLR_PORT
+              value: "8983"
+          image: registry.averbis.com/information-discovery/information-discovery:7.1.1
           livenessProbe:
             exec:
               command:
                 - curl
                 - -f
                 - http://localhost:8080/information-discovery
-            failureThreshold: 3
-            initialDelaySeconds: 60
-            periodSeconds: 30
-            timeoutSeconds: 5
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          startupProbe:
+            exec:
+              command:
+              - curl
+              - -f
+              - http://localhost:8080/information-discovery
+            failureThreshold: 30
+            periodSeconds: 10
           name: information-discovery
           ports:
             - containerPort: 8080
           resources: 
             requests:
               memory: {{ .Values.maxMemory }}
+              cpu: 1000m
           volumeMounts:
             - mountPath: /opt/resources/platform
               name: resourcevol

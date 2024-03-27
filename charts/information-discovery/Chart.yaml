@@ -1,10 +1,10 @@
 name: information-discovery
 description: Information Discovery NLP and ML platform
-version: 0.14.3
+version: 1.0.0
 apiVersion: v1
 keywords:
   - information-discovery
-appVersion: "6.2.0"
+appVersion: "7.1.1"
 home: https://averbis.com/
 icon: https://averbis.com/wp-content/uploads/2020/09/averbis_information_discovery.png
 maintainers:

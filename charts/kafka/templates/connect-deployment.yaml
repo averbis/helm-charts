@@ -23,6 +23,9 @@ spec:
       labels:
         io.kompose.service: connect
     spec:
+      securityContext:
+        runAsUser: 1000
+        fsGroup: 1000
       imagePullSecrets:
       - name: averbis-docker-registry
       containers:
@@ -39,7 +42,11 @@ spec:
               value: "8085"
             - name: CONNECT_VALUE_CONVERTER_SCHEMA_REGISTRY_URL
               value: http://schema-registry:8081
-          image: registry.averbis.com/kafka/averbis-kafka-connect:0.0.6
+            - name: KAFKA_HEAP_OPTS
+              value: "-Xms256M -Xmx3500M"
+            - name: CONNECT_LISTENERS
+              value: http://connect:8085
+          image: registry.averbis.com/information-discovery/averbis-kafka-connect:7.1.1
           livenessProbe:
             exec:
               command:

@@ -23,10 +23,13 @@ spec:
       labels:
         io.kompose.service: zookeeper
     spec:
+      securityContext:
+        runAsUser: 1000
+        fsGroup: 1000
       imagePullSecrets:
       - name: averbis-docker-registry
       containers:
-        - image: registry.averbis.com/kafka/averbis-kafka-zookeeper:0.0.6
+        - image: registry.averbis.com/kafka/averbis-kafka-zookeeper:4.1.0
           name: zookeeper
           ports:
             - containerPort: 3000
