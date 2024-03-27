@@ -65,7 +65,7 @@ spec:
               value: 256m
             - name: innodb_log_file_size
               value: 256m
-          image: registry.averbis.com/mariadb/mariadb:9.3.0
+          image: registry.averbis.com/mariadb/mariadb:9.4.0
           name: database
           ports:
             - containerPort: 3306

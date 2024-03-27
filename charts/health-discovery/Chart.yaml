@@ -1,10 +1,10 @@
 name: health-discovery
 description: Health Discovery is the healthcare text mining and machine learning platform for analyzing large amounts of patient data
-version: 7.0.2
+version: 7.1.0
 apiVersion: v1
 keywords:
   - health-discovery
-appVersion: "7.0.0"
+appVersion: "7.1.0"
 icon: https://averbis.com/wp-content/uploads/2020/09/averbis_health_discovery.png
 home: https://averbis.com/
 maintainers:

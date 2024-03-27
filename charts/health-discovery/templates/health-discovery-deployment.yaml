@@ -65,7 +65,7 @@ spec:
               value: "solr"
             - name: SOLR_PORT
               value: "8983"
-          image: registry.averbis.com/health-discovery/health-discovery:7.0.0
+          image: registry.averbis.com/health-discovery/health-discovery:7.1.0
           livenessProbe:
             exec:
               command:
