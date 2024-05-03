@@ -55,7 +55,7 @@ The chart can optionally be configured using the following parameters:
 | `maxMemory` | Maximum memory      | 24G               |
 | `existingDbSecret`  | Use MariaDB credentials from an existing secret. The secret has to contain the keys `databaseUsername` and `databasePassword`. Please refer to the [kubernetes documentation](https://kubernetes.io/docs/tasks/configmap-secret/managing-secret-using-kubectl/) for more information about how to create secrets | "" |
 | `externalDbConnectionUrl` | JDBC connection URL of an external MariaDB 10.x database. Requires the `existingDbSecret` parameter to be set | "" |
-| `registryUrl` | URL of the registry for the images      | registry.averbis.com               |
+| `registryUrl` | Container registry URL      | registry.averbis.com               |
 
 
 Specify each parameter using the `--set name=value` argument to `helm install` and `helm upgrade`  to overwrite the chart default values, for example:
@@ -67,7 +67,7 @@ registryUrl=my-registry-base-url
 
 NOTE: Once this chart is deployed, it is not possible to change the MariaDB access credentials, such as usernames or passwords, using Helm.
 
-NOTE: If using a proxy registry please make sure the structure of the image repositories is exactly as in the Averbis registry, i.e. currently:
+NOTE: If using an alternative registry please make sure the structure of the image repositories is exactly as in the Averbis registry, i.e. currently:
 /health-discovery/health-discovery
 /mariadb/mariadb
 /solr/solr
