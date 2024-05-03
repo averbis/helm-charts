@@ -3,3 +3,6 @@ maxMemory: "24G"
 
 # Use existing secret for MariaDB authentication parameters
 existingDbSecret: ""
+
+# Registry url to be used (default is Averbis registry)
+registryUrl: "registry.averbis.com"
