@@ -65,7 +65,7 @@ spec:
               value: "solr"
             - name: SOLR_PORT
               value: "8983"
-          image: {{ .Values.registryUrl }}/health-discovery/health-discovery:7.4.0
+          image: {{ .Values.registryUrl }}/health-discovery/health-discovery:7.5.0
           livenessProbe:
             exec:
               command:
