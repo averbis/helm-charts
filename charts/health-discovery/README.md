@@ -56,6 +56,15 @@ The chart can optionally be configured using the following parameters:
 | `existingDbSecret`  | Use MariaDB credentials from an existing secret. The secret has to contain the keys `databaseUsername` and `databasePassword`. Please refer to the [kubernetes documentation](https://kubernetes.io/docs/tasks/configmap-secret/managing-secret-using-kubectl/) for more information about how to create secrets | "" |
 | `externalDbConnectionUrl` | JDBC connection URL of an external MariaDB 10.x database. Requires the `existingDbSecret` parameter to be set | "" |
 | `registryUrl` | Container registry URL      | registry.averbis.com               |
+| `database.tolerations` | Node Tolerations | [] |
+| `database.affinity` | Node Affinity | {} |
+| `database.nodeSelector` | Node Selector | {} |
+| `healthDiscovery.tolerations` | Node Tolerations | [] |
+| `healthDiscovery.affinity` | Node Affinity | {} |
+| `healthDiscovery.nodeSelector` | Node Selector | {} |
+| `solr.tolerations` | Node Tolerations | [] |
+| `solr.affinity` | Node Affinity | {} |
+| `solr.nodeSelector` | Node Selector | {} |
 
 
 Specify each parameter using the `--set name=value` argument to `helm install` and `helm upgrade`  to overwrite the chart default values, for example:

@@ -97,4 +97,16 @@ spec:
         - name: resourcevol
           persistentVolumeClaim:
             claimName: resourcevol
+      {{- with (.Values.healthDiscovery).tolerations }}
+      tolerations:
+      {{ toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with (.Values.healthDiscovery).affinity }}
+      affinity:
+      {{ toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with (.Values.healthDiscovery).nodeSelector }}
+      nodeSelector:
+      {{ toYaml . | nindent 8 }}
+      {{- end }}
 status: {}
