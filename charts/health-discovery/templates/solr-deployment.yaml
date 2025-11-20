@@ -31,13 +31,9 @@ spec:
       - name: averbis-docker-registry
       containers:
         - env:
-            - name: SOLR_MAX_MEM
+            - name: SOLR_HEAP
               value: 512m
-            - name: SOLR_PORT
-              value: "8983"
-            - name: TEXTANALYSIS_URL
-              value: http://health-discovery:8080/health-discovery/rest
-          image: {{ .Values.registryUrl }}/solr/solr:9.4.0
+          image: {{ .Values.registryUrl }}/solr/solr:10.2.0
           livenessProbe:
             exec:
               command:
