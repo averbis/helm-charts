@@ -4,7 +4,7 @@ version: 8.3.1
 apiVersion: v1
 keywords:
   - health-discovery
-appVersion: "8.3.1"
+appVersion: "8.3.0"
 icon: https://averbis.com/wp-content/uploads/2020/09/averbis_health_discovery.png
 home: https://averbis.com/
 maintainers:
