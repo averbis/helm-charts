@@ -80,5 +80,17 @@ spec:
         - name: dbvol
           persistentVolumeClaim:
             claimName: dbvol
+      {{- with (.Values.database).tolerations }}
+      tolerations:
+      {{ toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with (.Values.database).affinity }}
+      affinity:
+      {{ toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with (.Values.database).nodeSelector }}
+      nodeSelector:
+      {{ toYaml . | nindent 8 }}
+      {{- end }}
 status: {}
 {{ end }}
